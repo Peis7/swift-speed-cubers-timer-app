@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BZg-oF-xNT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="aoX-Fs-yxh">
+            <objects>
+                <viewController id="6DE-9K-gbl" customClass="homeViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fYC-ze-pM1"/>
+                        <viewControllerLayoutGuide type="bottom" id="8qn-VM-QHQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JMm-RM-HVR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inframundo" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-KU-1zk">
+                                <rect key="frame" x="-345.5" y="33" width="1065" height="601"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vaR-KU-1zk" firstAttribute="centerX" secondItem="JMm-RM-HVR" secondAttribute="centerX" id="NMN-Wd-aYd"/>
+                            <constraint firstItem="vaR-KU-1zk" firstAttribute="centerY" secondItem="JMm-RM-HVR" secondAttribute="centerY" id="vD2-Bi-IaJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bI6-xM-GWT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xz5-4p-UK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175.19999999999999" y="109.29535232383809"/>
+        </scene>
+        <!--Select a Game-->
+        <scene sceneID="cHp-sL-5IQ">
+            <objects>
+                <tableViewController id="bRW-lx-ZNG" customClass="SelectCubeGameTableViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qM1-lB-hS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CubeGameCategoryCell" textLabel="AK4-4V-K3P" detailTextLabel="pEb-yn-r8D" style="IBUITableViewCellStyleSubtitle" id="mtf-tQ-yD1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mtf-tQ-yD1" id="c4U-Zx-Djv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AK4-4V-K3P">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pEb-yn-r8D">
+                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bRW-lx-ZNG" id="fte-mi-zrn"/>
+                            <outlet property="delegate" destination="bRW-lx-ZNG" id="stT-km-Xuz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select a Game" id="Y2r-q3-F99"/>
+                    <connections>
+                        <segue destination="YPW-ez-9Qb" kind="show" identifier="BlidGameSegue" id="5AA-cu-kCk"/>
+                        <segue destination="2ae-V3-hKn" kind="show" identifier="2by2by2FlatSegueID" id="xhn-Dc-ukU"/>
+                        <segue destination="jJf-XQ-qq6" kind="show" identifier="3by3by3FlatSegueID" id="6SO-VH-4lL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ArA-6L-HvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3479" y="426"/>
+        </scene>
+        <!--Cube View Controller-->
+        <scene sceneID="pLc-FM-2Jd">
+            <objects>
+                <viewController id="jJf-XQ-qq6" customClass="CubeViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r6t-Xq-845"/>
+                        <viewControllerLayoutGuide type="bottom" id="auq-7r-Ki7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SK0-sC-XYR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nEl-Uc-dc1" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="79" y="253" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEJ-Jt-cYR" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="162" y="252" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8m-ia-Y1M" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="245" y="253" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-1Q-4OZ" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="79" y="336" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-Ti-iSZ" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="162" y="336" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iK-Qq-fsm" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="245" y="336" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1a-dC-McA" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="79" y="419" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5k-kS-ECR" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="162" y="419" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKm-ph-FZj" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="245" y="419" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-XV-Ji4" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="328" y="253" width="14" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWT-Hu-COk" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="328" y="337" width="14" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqB-0z-i5w" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="328" y="420" width="14" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BP-RY-ezQ" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="245" y="233" width="74" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="126-ls-zSe" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="163" y="232" width="74" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJG-WK-u4X" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="79" y="232" width="74" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v98-nL-3Qk" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="63" y="252" width="14" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zwG-7k-3bI" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="63" y="336" width="14" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fd6-vo-CZh" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="63" y="419" width="14" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dym-Vh-wj0" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="79" y="496" width="74" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F52-qM-2ew" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="162" y="496" width="74" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RHc-Cz-HWX" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="246" y="496" width="74" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Moves:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eZH-AJ-g44">
+                                <rect key="frame" x="80" y="531" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="itemFront18" destination="RHc-Cz-HWX" id="hDm-SF-D0A"/>
+                        <outlet property="itemFront21" destination="F52-qM-2ew" id="cjY-RJ-gsX"/>
+                        <outlet property="itemFront24" destination="Dym-Vh-wj0" id="F4s-Nk-Pev"/>
+                        <outlet property="itemLeft24" destination="Fd6-vo-CZh" id="e0C-gn-Ywk"/>
+                        <outlet property="itemLeft25" destination="zwG-7k-3bI" id="HlE-kg-49B"/>
+                        <outlet property="itemLeft26" destination="v98-nL-3Qk" id="tgi-8U-d5s"/>
+                        <outlet property="itemP18" destination="UKm-ph-FZj" id="iho-cu-gBD"/>
+                        <outlet property="itemP19" destination="0iK-Qq-fsm" id="qnJ-kg-Hyk"/>
+                        <outlet property="itemP20" destination="j8m-ia-Y1M" id="tZa-oI-XGh"/>
+                        <outlet property="itemP21" destination="z5k-kS-ECR" id="xN6-vu-LIf"/>
+                        <outlet property="itemP22" destination="dGO-Ti-iSZ" id="DRH-v9-nNc"/>
+                        <outlet property="itemP23" destination="sEJ-Jt-cYR" id="FHi-OW-ecs"/>
+                        <outlet property="itemP24" destination="i1a-dC-McA" id="MkX-r8-vwD"/>
+                        <outlet property="itemP25" destination="tqs-1Q-4OZ" id="SZ7-OB-4em"/>
+                        <outlet property="itemP26" destination="nEl-Uc-dc1" id="Qwu-XN-JIY"/>
+                        <outlet property="itemRight18" destination="jqB-0z-i5w" id="Ai6-fI-qnr"/>
+                        <outlet property="itemRight19" destination="WWT-Hu-COk" id="CN9-a3-c5f"/>
+                        <outlet property="itemRight20" destination="dIx-XV-Ji4" id="xuz-ZI-zm9"/>
+                        <outlet property="itemUp20" destination="7BP-RY-ezQ" id="99I-ED-WIl"/>
+                        <outlet property="itemUp23" destination="126-ls-zSe" id="5X3-qa-oq3"/>
+                        <outlet property="itemUp26" destination="PJG-WK-u4X" id="Owt-64-CWr"/>
+                        <outlet property="movesLogs" destination="eZH-AJ-g44" id="vSW-K6-ICj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEb-tc-fMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4393" y="-344"/>
+        </scene>
+        <!--Two Bytwo Bytwo View Controller-->
+        <scene sceneID="PJp-lT-Ydl">
+            <objects>
+                <viewController id="2ae-V3-hKn" customClass="twoBytwoBytwoViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uyA-Wh-D5C"/>
+                        <viewControllerLayoutGuide type="bottom" id="xy7-7V-6N0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MhH-zX-LGl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hS8-gJ-EhE">
+                                <rect key="frame" x="77" y="205" width="111" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lw6-xu-NF3">
+                                <rect key="frame" x="77" y="316" width="111" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9A-eg-zPs">
+                                <rect key="frame" x="196" y="205" width="111" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-Yb-i2g">
+                                <rect key="frame" x="196" y="316" width="111" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RvN-Vh-OtO">
+                                <rect key="frame" x="77" y="184" width="111" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MfS-so-ceo">
+                                <rect key="frame" x="196" y="184" width="111" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-90-MvO">
+                                <rect key="frame" x="77" y="427" width="111" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Es4-zr-7uB">
+                                <rect key="frame" x="196" y="427" width="111" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-cm-tFA">
+                                <rect key="frame" x="315" y="205" width="13" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7SY-wa-fnX">
+                                <rect key="frame" x="315" y="316" width="13" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nit-hr-d5c">
+                                <rect key="frame" x="56" y="205" width="13" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-r1-bPf">
+                                <rect key="frame" x="56" y="316" width="13" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Moves:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SgC-pg-1k5">
+                                <rect key="frame" x="67" y="511" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDu-xD-fq5">
+                                <rect key="frame" x="151" y="20" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Scrable">
+                                    <color key="titleColor" red="0.80784313730000001" green="0.16862745100000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doScrable:" destination="2ae-V3-hKn" eventType="touchUpInside" id="g0U-rW-HKD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=": " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heY-vr-tuR">
+                                <rect key="frame" x="16" y="62" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.80784313730000001" green="0.16862745100000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemBackP5" destination="MfS-so-ceo" id="JOU-8s-ji5"/>
+                        <outlet property="itemBackP7" destination="RvN-Vh-OtO" id="qXK-1v-FTe"/>
+                        <outlet property="itemFrontP4" destination="Es4-zr-7uB" id="rtu-ZM-Osf"/>
+                        <outlet property="itemFrontP6" destination="qgo-90-MvO" id="RcB-OI-PvU"/>
+                        <outlet property="itemLeftP6" destination="TxA-r1-bPf" id="tP2-K7-Ytq"/>
+                        <outlet property="itemLeftP7" destination="nit-hr-d5c" id="rUz-Ri-oFD"/>
+                        <outlet property="itemRightP4" destination="7SY-wa-fnX" id="iIt-lX-th1"/>
+                        <outlet property="itemRightP5" destination="yfm-cm-tFA" id="mx7-9B-gHT"/>
+                        <outlet property="itemUpP4" destination="xbo-Yb-i2g" id="Kgx-VW-6vA"/>
+                        <outlet property="itemUpP5" destination="a9A-eg-zPs" id="XOe-WC-UNg"/>
+                        <outlet property="itemUpP6" destination="lw6-xu-NF3" id="rTe-3Y-1ND"/>
+                        <outlet property="itemUpP7" destination="hS8-gJ-EhE" id="are-Gj-Mcr"/>
+                        <outlet property="movesLogs" destination="SgC-pg-1k5" id="kjW-E7-llo"/>
+                        <outlet property="scrableDescription" destination="heY-vr-tuR" id="oiJ-Xh-wav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7o-nb-VDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5102" y="-344"/>
+        </scene>
+        <!--Draw Cube Two By Two By Two View Controller-->
+        <scene sceneID="CEd-OJ-hYr">
+            <objects>
+                <viewController id="YPW-ez-9Qb" customClass="drawCubeTwoByTwoByTwoViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="whK-2m-15w"/>
+                        <viewControllerLayoutGuide type="bottom" id="KXw-xd-g0N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G7G-uP-2ez">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="gqO-5x-dQy" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="31" y="344" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-7N-apU" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="84" y="344" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="cy0-Dr-CaX" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="344" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="P6Y-rt-6de" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="344" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="Fmg-GL-oVh" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="242" y="344" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="fcU-P1-K6S" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="294" y="344" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-1S-iB9" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="291" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="kjI-lR-T6M" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="291" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="9CK-ct-JKp" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="396" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="q9L-ND-iEY" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="396" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="L85-aF-Oww" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="448" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="7tg-Ae-i0X" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="448" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-bc-AeA" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="238" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="kOJ-bz-Hkr" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="238" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="lsD-EQ-f1J" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="185" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-sP-etX" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="185" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="8rc-6C-aNL" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="133" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="gDY-I0-9WM" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="133" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="2X3-jn-PpE" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="31" y="396" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="2k6-wT-ON4" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="84" y="396" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="Fqr-bZ-NC8" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="242" y="396" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="rCc-TK-i13" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="294" y="396" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-oo-CP2" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="137" y="500" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="eVQ-D3-LLh" customClass="UIImageViewCubeItem" customModule="XTimer" customModuleProvider="target">
+                                <rect key="frame" x="189" y="500" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82536676038056367" green="0.86378705616069285" blue="0.89555431547619047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Moves:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9nK-Pa-7mA">
+                                <rect key="frame" x="31" y="72" width="313" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXy-1e-TDR">
+                                <rect key="frame" x="42" y="560" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGk-gi-vVh">
+                                <rect key="frame" x="89" y="560" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25098039220000001" green="0.52941176469999995" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQx-a9-AQO">
+                                <rect key="frame" x="138" y="560" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VsF-GI-ZB5">
+                                <rect key="frame" x="186" y="560" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-od-gwI">
+                                <rect key="frame" x="234" y="560" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YtP-9Q-ILG">
+                                <rect key="frame" x="283" y="560" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="bluePalleteColor" destination="VsF-GI-ZB5" id="za0-Jv-TiE"/>
+                        <outlet property="greenPalleteColor" destination="KB0-od-gwI" id="cBH-jP-8Xu"/>
+                        <outlet property="itemBackP1" destination="gDY-I0-9WM" id="QYj-vT-uj9"/>
+                        <outlet property="itemBackP3" destination="8rc-6C-aNL" id="RpG-UT-hXW"/>
+                        <outlet property="itemBackP5" destination="yfQ-sP-etX" id="LJ5-Rm-DtY"/>
+                        <outlet property="itemBackP7" destination="lsD-EQ-f1J" id="61V-Qv-bFB"/>
+                        <outlet property="itemDownP0" destination="7tg-Ae-i0X" id="KsY-rC-Cfc"/>
+                        <outlet property="itemDownP1" destination="eVQ-D3-LLh" id="gCQ-ea-4g6"/>
+                        <outlet property="itemDownP2" destination="L85-aF-Oww" id="dYy-kh-r40"/>
+                        <outlet property="itemDownP3" destination="d6F-oo-CP2" id="R1d-pG-P3I"/>
+                        <outlet property="itemFrontP0" destination="q9L-ND-iEY" id="HSv-DW-dbT"/>
+                        <outlet property="itemFrontP2" destination="9CK-ct-JKp" id="Ptt-Kw-m2k"/>
+                        <outlet property="itemFrontP4" destination="P6Y-rt-6de" id="ZXm-Gm-HXL"/>
+                        <outlet property="itemFrontP6" destination="cy0-Dr-CaX" id="t7d-yh-sz1"/>
+                        <outlet property="itemLeftP2" destination="2k6-wT-ON4" id="qLT-Tp-Z7s"/>
+                        <outlet property="itemLeftP3" destination="2X3-jn-PpE" id="c2T-lA-loj"/>
+                        <outlet property="itemLeftP6" destination="8Fi-7N-apU" id="ULo-a9-cXo"/>
+                        <outlet property="itemLeftP7" destination="gqO-5x-dQy" id="Ad4-Xp-kV7"/>
+                        <outlet property="itemRightP0" destination="Fqr-bZ-NC8" id="bwS-mG-3hq"/>
+                        <outlet property="itemRightP1" destination="rCc-TK-i13" id="kfX-3j-uj8"/>
+                        <outlet property="itemRightP4" destination="Fmg-GL-oVh" id="ixK-bg-Cgi"/>
+                        <outlet property="itemRightP5" destination="fcU-P1-K6S" id="fW7-PM-cxd"/>
+                        <outlet property="itemUpP4" destination="kjI-lR-T6M" id="DEe-o7-alS"/>
+                        <outlet property="itemUpP5" destination="kOJ-bz-Hkr" id="ygK-FC-g6J"/>
+                        <outlet property="itemUpP6" destination="k1a-1S-iB9" id="g8k-zK-qcP"/>
+                        <outlet property="itemUpP7" destination="g6P-bc-AeA" id="ifg-Bd-suf"/>
+                        <outlet property="movesLogs" destination="9nK-Pa-7mA" id="ri2-Ed-BEu"/>
+                        <outlet property="orangePalleteColor" destination="pQx-a9-AQO" id="Ixz-T8-ttz"/>
+                        <outlet property="redPalleteColor" destination="lGk-gi-vVh" id="4EH-ls-Wve"/>
+                        <outlet property="whitePalleteColor" destination="YtP-9Q-ILG" id="1Da-ik-9Ld"/>
+                        <outlet property="yellowPalleteColor" destination="GXy-1e-TDR" id="NvE-hQ-5kX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPo-KV-uI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5773.6000000000004" y="-344.07796101949026"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IIM-4y-GwQ">
+            <objects>
+                <viewController id="7gx-rh-THc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aAp-J0-mAL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zzs-fr-0sj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C9W-Mo-2mw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="naE-pK-58M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCr-H0-Dh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2010" y="-616"/>
+        </scene>
+        <!--Top Cubers-->
+        <scene sceneID="Qxf-YF-4kc">
+            <objects>
+                <viewController id="v95-OM-2sW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EKd-6H-RFF"/>
+                        <viewControllerLayoutGuide type="bottom" id="kAf-2m-neP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Be3-4t-Khz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Top Cubers" image="topCubers" id="JfB-Ja-cR2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R15-DQ-pC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="-242"/>
+        </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="QVz-0l-im1">
+            <objects>
+                <tabBarController storyboardIdentifier="mainTabBarViewControllerID" id="dO9-qE-MoL" customClass="MainTabBarViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WFv-Gc-N3r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="v95-OM-2sW" kind="relationship" relationship="viewControllers" id="Uhp-ss-6I2"/>
+                        <segue destination="B9H-TO-d4I" kind="relationship" relationship="viewControllers" id="9WQ-rV-lzO"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aXQ-Lp-8QO"/>
+                        <segue destination="7gx-rh-THc" kind="relationship" relationship="viewControllers" id="foE-PT-e9v"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIQ-Qa-csR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="-1"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="timerViewControllerID" id="BYZ-38-t0r" customClass="timerViewController" customModule="XTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-M7-X8v">
+                                <rect key="frame" x="257" y="214" width="90" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop_timer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkv-U4-R61"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r3H-eV-OWo">
+                                <rect key="frame" x="62" y="455" width="297" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1V-Sa-4I8">
+                                <rect key="frame" x="83" y="214" width="90" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="start_timer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bL-Af-EZ7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timer" image="TimeBlue" selectedImage="TimeFilledFill" id="Phi-SN-8oW"/>
+                    <navigationItem key="navigationItem" title="Timer" id="t7h-ge-vjL">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Rzu-AP-d9V"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="laps_viewController" destination="r3H-eV-OWo" id="u19-2F-hal"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DDu-9m-5EY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BZg-oF-xNT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1BD-Ek-zPq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6DE-9K-gbl" kind="relationship" relationship="rootViewController" id="gMh-gO-90u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BRg-78-gIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-764" y="109.29535232383809"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="srR-4z-LaA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B9H-TO-d4I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tutorial" image="whiteRubik" selectedImage="orangeRubik" id="9vh-2g-wcl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2J1-e2-T9v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bRW-lx-ZNG" kind="relationship" relationship="rootViewController" id="dXO-lX-E6w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gum-u1-U4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="426.83658170914543"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Inframundo" width="1065" height="601"/>
+        <image name="TimeBlue" width="30" height="30"/>
+        <image name="TimeFilledFill" width="30" height="30"/>
+        <image name="orangeRubik" width="30" height="30"/>
+        <image name="question" width="48" height="48"/>
+        <image name="topCubers" width="30" height="30"/>
+        <image name="whiteRubik" width="30" height="30"/>
+    </resources>
+</document>
